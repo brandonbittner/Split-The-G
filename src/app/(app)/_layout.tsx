@@ -73,12 +73,12 @@ export default function AppLayout() {
         options={{ title: '', tabBarIcon: () => <AddIcon />, tabBarLabel: () => null }}
       />
       <Tabs.Screen
-        name="stats"
-        options={{ title: 'Stats', tabBarIcon: ({ focused }) => <TabIcon focused={focused} /> }}
-      />
-      <Tabs.Screen
         name="you"
         options={{ title: 'You', tabBarIcon: ({ focused }) => <TabIcon focused={focused} /> }}
+      />
+      <Tabs.Screen
+        name="stats"
+        options={{ title: 'Stats', tabBarIcon: ({ focused }) => <TabIcon focused={focused} /> }}
       />
       <Tabs.Screen name="items/new" options={{ href: null }} />
     </Tabs>

@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppHeader } from '@/components/AppHeader';
 
 export default function YouScreen() {
+  // TODO: replace with real user profile data
   return (
     <SafeAreaView className="flex-1 bg-white dark:bg-zinc-800">
       <AppHeader />
