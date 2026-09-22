@@ -3,9 +3,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function YouScreen() {
   return (
-    <SafeAreaView className="flex-1 bg-white dark:bg-gray-950">
+    <SafeAreaView className="flex-1 bg-white dark:bg-zinc-800">
       <View className="flex-1 items-center justify-center">
-        <Text className="text-gray-400 dark:text-gray-600 text-lg">You</Text>
+        <Text className="text-zinc-400 dark:text-zinc-600 text-lg">You</Text>
       </View>
     </SafeAreaView>
   );
