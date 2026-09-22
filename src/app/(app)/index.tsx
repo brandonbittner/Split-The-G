@@ -3,9 +3,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
+    <SafeAreaView className="flex-1 bg-white dark:bg-gray-950">
       <View className="flex-1 items-center justify-center">
-        <Text className="text-gray-400 text-lg">Home</Text>
+        <Text className="text-gray-400 dark:text-gray-600 text-lg">Home</Text>
       </View>
     </SafeAreaView>
   );

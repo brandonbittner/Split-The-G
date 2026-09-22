@@ -8,9 +8,9 @@ function TabIcon({ focused }: { focused: boolean }) {
         width: 22,
         height: 22,
         borderRadius: 11,
-        backgroundColor: focused ? '#2563EB' : 'transparent',
+        backgroundColor: focused ? '#3B82F6' : 'transparent',
         borderWidth: 2,
-        borderColor: focused ? '#2563EB' : '#9CA3AF',
+        borderColor: focused ? '#3B82F6' : '#4B5563',
       }}
     />
   );
@@ -21,11 +21,11 @@ export default function AppLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: '#2563EB',
-        tabBarInactiveTintColor: '#9CA3AF',
+        tabBarActiveTintColor: '#3B82F6',
+        tabBarInactiveTintColor: '#4B5563',
         tabBarStyle: {
-          backgroundColor: '#FFFFFF',
-          borderTopColor: '#F3F4F6',
+          backgroundColor: '#030712',
+          borderTopColor: '#111827',
           height: 64,
           paddingBottom: 10,
           paddingTop: 8,

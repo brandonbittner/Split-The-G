@@ -6,11 +6,13 @@ import {
 } from '@expo-google-fonts/roboto';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
+import { colorScheme } from 'nativewind';
 import { useEffect } from 'react';
 
 import '@/global.css';
 
 SplashScreen.preventAutoHideAsync();
+colorScheme.set('dark');
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({

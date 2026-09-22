@@ -3,9 +3,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function CommunityScreen() {
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
+    <SafeAreaView className="flex-1 bg-white dark:bg-gray-950">
       <View className="flex-1 items-center justify-center">
-        <Text className="text-gray-400 text-lg">Community</Text>
+        <Text className="text-gray-400 dark:text-gray-600 text-lg">Community</Text>
       </View>
     </SafeAreaView>
   );
