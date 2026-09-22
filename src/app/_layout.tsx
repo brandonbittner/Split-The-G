@@ -1,43 +1,33 @@
-import { Stack, useRouter, useSegments } from 'expo-router';
+import {
+  Roboto_400Regular,
+  Roboto_500Medium,
+  Roboto_700Bold,
+  useFonts,
+} from '@expo-google-fonts/roboto';
+import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 
-import { AuthProvider, useAuth } from '@/hooks/use-auth';
 import '@/global.css';
 
 SplashScreen.preventAutoHideAsync();
 
-function RootLayoutNav() {
-  const { session, loading } = useAuth();
-  const router = useRouter();
-  const segments = useSegments();
+export default function RootLayout() {
+  const [loaded, error] = useFonts({
+    Roboto_400Regular,
+    Roboto_500Medium,
+    Roboto_700Bold,
+  });
 
   useEffect(() => {
-    if (loading) return;
-
-    SplashScreen.hideAsync();
-
-    const inAuthGroup = segments[0] === '(auth)';
-
-    if (!session && !inAuthGroup) {
-      // Not signed in and not on an auth screen — send to sign-in
-      router.replace('/(auth)/sign-in');
-    } else if (session && inAuthGroup) {
-      // Already signed in but still on an auth screen — send to app
-      router.replace('/(app)');
+    if (loaded || error) {
+      SplashScreen.hideAsync();
     }
-    // router and segments are stable refs from expo-router; excluding them
-    // avoids an infinite redirect loop on every navigation event.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session, loading]);
+  }, [loaded, error]);
+
+  if (!loaded && !error) {
+    return null;
+  }
 
   return <Stack screenOptions={{ headerShown: false }} />;
-}
-
-export default function RootLayout() {
-  return (
-    <AuthProvider>
-      <RootLayoutNav />
-    </AuthProvider>
-  );
 }
