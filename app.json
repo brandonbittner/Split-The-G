@@ -1,14 +1,16 @@
 {
   "expo": {
-    "name": "split-the-g",
+    "name": "Split The G",
     "slug": "split-the-g",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "splittheg",
+    "scheme": "split-the-g",
     "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
     "ios": {
-      "icon": "./assets/expo.icon"
+      "supportsTablet": false,
+      "bundleIdentifier": "com.yourname.splittheg"
     },
     "android": {
       "adaptiveIcon": {
@@ -17,11 +19,7 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
-    },
-    "web": {
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "package": "com.yourname.splittheg"
     },
     "plugins": [
       "expo-router",
@@ -35,8 +33,7 @@
       ]
     ],
     "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
+      "typedRoutes": true
     }
   }
 }

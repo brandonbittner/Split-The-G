@@ -30,13 +30,17 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
+# local env files — NEVER commit real keys
+.env
+.env.local
 .env*.local
 
 # typescript
 *.tsbuildinfo
 
-example
+# Supabase local state
+supabase/.branches
+supabase/.temp
 
 # generated native folders
 /ios
