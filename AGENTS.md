@@ -34,6 +34,24 @@ Run lint and typecheck before declaring any task done.
 Use EAS to build, sign, and submit the app in the cloud (`eas build`, `eas submit`) and to ship over-the-air updates (`eas update`) — no local Xcode or Android Studio required. Run EAS CLI as `bunx eas-cli <command>` in Bun projects, or `npx eas-cli@latest <command>` otherwise; substitute that for bare `eas` in docs examples.
 Docs: https://docs.expo.dev/eas/index.md
 
+## Stubbing UI
+
+When building UI stubs (screens, components, or layouts without real data), automatically add `// TODO:` comments anywhere a data connection will eventually be needed. Examples of where to add them:
+
+- Hardcoded placeholder values that will come from an API or database
+- Static lists or arrays that will be fetched or subscribed to
+- Event handlers that are empty or no-op but will trigger mutations
+- Auth-gated logic that is bypassed during stubbing
+- Any `null`, `undefined`, or empty-state fallback that a real data layer would replace
+
+The comment should briefly describe what needs to be wired up, e.g.:
+
+```ts
+// TODO: fetch climb sessions from Supabase for this user
+// TODO: connect to auth context and show real user profile
+// TODO: call mutation to log new climb on submit
+```
+
 ## Rules
 
 - If `ios/` and `android/` directories do not exist, they are generated (Continuous Native Generation). Never create or edit them by hand — configure native behavior in `app.json` and config plugins.
