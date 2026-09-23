@@ -20,6 +20,7 @@ const DUMMY_FEED: FeedCardProps[] = [
     timeAgo: '32m',
     pub: 'The Porterhouse',
     score: 87,
+    tag: 'friend',
     photo: pint1,
   },
   {
@@ -30,6 +31,7 @@ const DUMMY_FEED: FeedCardProps[] = [
     timeAgo: '2hr',
     pub: "Mulligan's",
     score: 64,
+    tag: 'local drunk',
     photo: pint2,
   },
   {
@@ -40,6 +42,7 @@ const DUMMY_FEED: FeedCardProps[] = [
     timeAgo: '5hr',
     pub: "The Stag's Head",
     score: 91,
+    tag: 'friend',
     photo: pint3,
   },
   {
@@ -60,6 +63,7 @@ const DUMMY_FEED: FeedCardProps[] = [
     timeAgo: '1d',
     pub: "Kehoe's",
     score: 78,
+    tag: 'regular',
     photo: pint2,
   },
 ];
@@ -69,7 +73,7 @@ export default function HomeScreen() {
   const insets = useSafeAreaInsets();
 
   return (
-    <View className="flex-1 bg-zinc-800">
+    <View className="flex-1 bg-zinc-900">
       <FlatList
         data={DUMMY_FEED}
         keyExtractor={(item) => item.id}
@@ -86,13 +90,13 @@ export default function HomeScreen() {
           left: 0,
           right: 0,
           height: insets.top,
-          backgroundColor: '#27272a',
+          backgroundColor: '#18181b',
         }}
       />
 
       {/* Gradient fade from opaque zinc-800 (top) to transparent (bottom), with buttons sitting inside */}
       <LinearGradient
-        colors={['#27272a', 'rgba(39,39,42,0)']}
+        colors={['#18181b', 'rgba(24,24,27,0)']}
         style={{ position: 'absolute', top: insets.top, left: 0, right: 0 }}
         onLayout={(e) => setHeaderHeight(e.nativeEvent.layout.height)}
       >

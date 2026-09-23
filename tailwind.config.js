@@ -10,6 +10,10 @@ module.exports = {
         bold: ['Roboto_700Bold'],
       },
       colors: {
+        zinc: {
+          750: '#333338',
+          850: '#1f1f22',
+        },
         brand: {
           50: '#eff6ff',
           100: '#dbeafe',
