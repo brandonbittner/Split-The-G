@@ -78,7 +78,7 @@ export default function HomeScreen() {
         data={DUMMY_FEED}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <FeedCard {...item} />}
-        contentContainerStyle={{ paddingTop: insets.top + headerHeight + 8, paddingBottom: 16 }}
+        contentContainerStyle={{ paddingTop: insets.top + headerHeight + 8, paddingBottom: 96 }}
         showsVerticalScrollIndicator={false}
         style={{ flex: 1 }}
       />

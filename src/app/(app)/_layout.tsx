@@ -1,5 +1,6 @@
+import { BlurView } from 'expo-blur';
 import { Tabs } from 'expo-router';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 function TabIcon({ focused }: { focused: boolean }) {
   return (
@@ -41,19 +42,26 @@ export default function AppLayout() {
         tabBarActiveTintColor: '#3B82F6',
         tabBarInactiveTintColor: '#52525b',
         tabBarStyle: {
-          backgroundColor: '#18181b',
+          position: 'absolute',
+          backgroundColor: 'transparent',
           paddingHorizontal: 16,
           borderTopWidth: 1,
-          borderTopColor: '#09090b',
+          borderTopColor: '#27272a',
           height: 80,
           paddingBottom: 32,
           paddingTop: 14,
           shadowColor: '#000',
           shadowOffset: { width: 0, height: -4 },
-          shadowOpacity: 0.3,
+          shadowOpacity: 0.5,
           shadowRadius: 8,
           elevation: 16,
         },
+        tabBarBackground: () => (
+          <>
+            <BlurView intensity={20} tint="dark" style={StyleSheet.absoluteFill} />
+            <View style={[StyleSheet.absoluteFill, { backgroundColor: 'rgba(24,24,27,0.9)' }]} />
+          </>
+        ),
         tabBarLabelStyle: {
           fontSize: 13,
           fontWeight: '500',

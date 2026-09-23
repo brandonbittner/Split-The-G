@@ -98,7 +98,16 @@ export function FeedCard({
   photo,
 }: FeedCardProps) {
   return (
-    <View className="bg-zinc-750 rounded-[32px] overflow-hidden mx-4 mb-4">
+    <View
+      className="bg-zinc-850 rounded-[32px] mx-4 mb-4 border border-zinc-700"
+      style={{
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 6 },
+        shadowOpacity: 0.45,
+        shadowRadius: 16,
+        elevation: 12,
+      }}
+    >
       {/* Header row */}
       {/* Avatar · username · time — all on one line */}
       <View className="flex-row items-center gap-3 px-5 pt-5 pb-1">
