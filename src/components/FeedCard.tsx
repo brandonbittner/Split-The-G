@@ -99,7 +99,7 @@ export function FeedCard({
 }: FeedCardProps) {
   return (
     <View
-      className="bg-zinc-850 rounded-[32px] mx-4 mb-4 border border-zinc-700"
+      className="bg-zinc-900 rounded-[32px] mx-4 mb-4 border border-zinc-800"
       style={{
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 6 },

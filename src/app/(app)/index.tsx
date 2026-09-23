@@ -82,24 +82,13 @@ export default function HomeScreen() {
         showsVerticalScrollIndicator={false}
         style={{ flex: 1 }}
       />
-      {/* Solid zinc-800 block covering the status bar area */}
-      <View
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: insets.top,
-          backgroundColor: '#18181b',
-        }}
-      />
-
-      {/* Gradient fade from opaque zinc-800 (top) to transparent (bottom), with buttons sitting inside */}
+      {/* Gradient covers from very top of screen (through safe area) down past the header buttons */}
       <LinearGradient
         colors={['#18181b', 'rgba(24,24,27,0)']}
-        style={{ position: 'absolute', top: insets.top, left: 0, right: 0 }}
+        style={{ position: 'absolute', top: 0, left: 0, right: 0 }}
         onLayout={(e) => setHeaderHeight(e.nativeEvent.layout.height)}
       >
+        <View style={{ height: insets.top }} />
         <AppHeader />
       </LinearGradient>
     </View>
