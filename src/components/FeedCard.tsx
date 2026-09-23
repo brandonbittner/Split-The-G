@@ -47,6 +47,11 @@ function ScoreStamp({ score }: { score: number }) {
         right: 10,
         width: STAMP_SIZE,
         height: STAMP_SIZE,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 6 },
+        shadowOpacity: 0.8,
+        shadowRadius: 6,
+        elevation: 16,
       }}
     >
       {/* SVG circular progress ring */}
