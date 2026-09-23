@@ -73,16 +73,16 @@ export default function AppLayout() {
         options={{ title: 'Home', tabBarIcon: ({ focused }) => <TabIcon focused={focused} /> }}
       />
       <Tabs.Screen
-        name="community"
-        options={{ title: 'Community', tabBarIcon: ({ focused }) => <TabIcon focused={focused} /> }}
+        name="leaders"
+        options={{ title: 'Leaders', tabBarIcon: ({ focused }) => <TabIcon focused={focused} /> }}
       />
       <Tabs.Screen
         name="add"
         options={{ title: '', tabBarIcon: () => <AddIcon />, tabBarLabel: () => null }}
       />
       <Tabs.Screen
-        name="you"
-        options={{ title: 'You', tabBarIcon: ({ focused }) => <TabIcon focused={focused} /> }}
+        name="pubs"
+        options={{ title: 'Pubs', tabBarIcon: ({ focused }) => <TabIcon focused={focused} /> }}
       />
       <Tabs.Screen
         name="stats"

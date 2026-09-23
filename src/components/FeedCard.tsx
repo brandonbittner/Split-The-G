@@ -142,8 +142,10 @@ export function FeedCard({
         <MoreHorizontal size={20} stroke="#71717a" />
       </View>
 
+      <View className="h-px bg-zinc-850" />
+
       {/* Pub name */}
-      <View className="flex-row items-center gap-1.5 px-5 pb-3">
+      <View className="flex-row items-center gap-1.5 px-5 pt-3 pb-3">
         <MapPin size={13} stroke="#a1a1aa" />
         {/* TODO: make pub name tappable — navigate to pub page */}
         <Text className="text-white text-xl font-bold">{pub}</Text>
