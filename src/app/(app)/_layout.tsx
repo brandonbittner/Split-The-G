@@ -1,23 +1,10 @@
 import { BlurView } from 'expo-blur';
 import { Tabs } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
-
-function TabIcon({ focused }: { focused: boolean }) {
-  return (
-    <View
-      style={{
-        width: 22,
-        height: 22,
-        borderRadius: 11,
-        backgroundColor: focused ? '#3B82F6' : 'transparent',
-        borderWidth: 2,
-        borderColor: focused ? '#3B82F6' : '#52525b',
-      }}
-    />
-  );
-}
+import { Beer, Camera, ChartArea, House, Trophy } from 'lucide-react-native';
+import { StyleSheet, View } from 'react-native';
 
 function AddIcon() {
+  // TODO: replace Camera with a custom Guinness glass / split-the-G branded icon
   return (
     <View
       style={{
@@ -29,7 +16,7 @@ function AddIcon() {
         justifyContent: 'center',
       }}
     >
-      <Text style={{ color: '#fff', fontSize: 28, lineHeight: 32, fontWeight: '300' }}>+</Text>
+      <Camera size={22} stroke="#fff" />
     </View>
   );
 }
@@ -70,11 +57,14 @@ export default function AppLayout() {
     >
       <Tabs.Screen
         name="index"
-        options={{ title: 'Home', tabBarIcon: ({ focused }) => <TabIcon focused={focused} /> }}
+        options={{ title: 'Home', tabBarIcon: ({ color }) => <House size={22} stroke={color} /> }}
       />
       <Tabs.Screen
         name="leaders"
-        options={{ title: 'Leaders', tabBarIcon: ({ focused }) => <TabIcon focused={focused} /> }}
+        options={{
+          title: 'Leaders',
+          tabBarIcon: ({ color }) => <Trophy size={22} stroke={color} />,
+        }}
       />
       <Tabs.Screen
         name="add"
@@ -82,11 +72,14 @@ export default function AppLayout() {
       />
       <Tabs.Screen
         name="pubs"
-        options={{ title: 'Pubs', tabBarIcon: ({ focused }) => <TabIcon focused={focused} /> }}
+        options={{ title: 'Pubs', tabBarIcon: ({ color }) => <Beer size={22} stroke={color} /> }}
       />
       <Tabs.Screen
         name="stats"
-        options={{ title: 'Stats', tabBarIcon: ({ focused }) => <TabIcon focused={focused} /> }}
+        options={{
+          title: 'Stats',
+          tabBarIcon: ({ color }) => <ChartArea size={22} stroke={color} />,
+        }}
       />
       <Tabs.Screen name="items/new" options={{ href: null }} />
     </Tabs>
